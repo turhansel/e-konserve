@@ -1,0 +1,34 @@
+{
+	"name": "e-konserve",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepare": "husky install",
+		"cm": "cz"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/turhansel/e-konserve.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/turhansel/e-konserve/issues"
+	},
+	"homepage": "https://github.com/turhansel/e-konserve#readme",
+	"devDependencies": {
+		"@commitlint/cli": "^16.1.0",
+		"commitizen": "^4.2.4",
+		"commitlint-config-gitmoji": "^2.2.5",
+		"cz-customizable": "^6.3.0",
+		"husky": "^7.0.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-customizable"
+		}
+	}
+}
