@@ -4,6 +4,8 @@ import SignIn from './pages/Auth/SignIn';
 import ProductDetail from './pages/ProductDetail';
 import SignUp from './pages/Auth/SignUp';
 import Products from './pages/Products';
+import Profile from './pages/Profile';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
@@ -15,6 +17,14 @@ function App() {
           <Route path='product/:product_id' element={<ProductDetail />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

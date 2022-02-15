@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Navbar = () => {
+  const { loggedIn } = useAuth();
+
   return (
     <nav className='flex items-center justify-between rounded-3xl bg-gradient-to-t from-indigo-400 to-[#32f9b0] p-4 mix-blend-hard-light shadow-lg backdrop-blur-2xl '>
       <div className='flex'>
@@ -18,12 +21,23 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='space-x-2'>
-        <Link to='/signin'>
-          <Button colorScheme='orange'>Login</Button>
-        </Link>
-        <Link to='/signup'>
-          <Button colorScheme='orange'>Register</Button>
-        </Link>
+        {!loggedIn ? (
+          <>
+            <Link to='/signin'>
+              <Button colorScheme='orange'>Login</Button>
+            </Link>
+            <Link to='/signup'>
+              <Button colorScheme='orange'>Register</Button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to='/profile'>
+              <Button colorScheme='blue'>Profile</Button>
+            </Link>
+          </>
+        )}
+
       </div>
     </nav>
   );
