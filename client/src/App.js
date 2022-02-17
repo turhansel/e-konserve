@@ -6,6 +6,7 @@ import SignUp from './pages/Auth/SignUp';
 import Products from './pages/Products';
 import Profile from './pages/Profile';
 import ProtectedRoute from './pages/ProtectedRoute';
+import Error404 from './pages/Error404';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='product/:product_id' element={<ProductDetail />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='*' element={<Error404 />} />
           <Route
             path='/profile'
             element={
